@@ -1,0 +1,229 @@
+:host{
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    margin: 0%;
+}
+/*BANNER*/
+.endorseHeader {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+.endorseBanner {
+    height: 50px;
+    background-color: rgb(31, 56, 98);
+    color: white;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.endorseBannerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    padding: 0%;
+    margin: 0%;
+    height: auto;
+}
+
+.endorseImgContainer {
+    display: flex;
+    align-items: center;
+}
+
+.endorseImgContainer img {
+    height: 30px;
+    object-fit: cover;
+}
+
+.endorseUserAcc {
+    display: flex;
+    align-items: center;
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*-------------------------------------------------------*/
+
+
+/*-----------------BREADCRUMB----------------------------*/
+
+
+/*-------------------------------------------------------*/
+
+.endorseBreadcrumbContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    background-color: #fafafa;
+}
+
+.endorseBreadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    width: 100%;
+    padding: 5px 0px;
+    list-style: none;
+    background-color: #fafafa;
+    margin: 0px 20px;
+}
+
+.endorseBreadcrumb a {
+    color: black;
+    text-decoration: none;
+    padding: 3px;
+}
+
+.endorseBreadcrumb a:hover {
+    border-radius: 5px;
+}
+
+ul.endorseBreadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+}
+
+
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*------------------------------------------------------*/
+
+
+/*-----------------TITLE ENDORSEMENT--------------------*/
+
+
+/*------------------------------------------------------*/
+
+/*CREATE ENDORSEMENT FORM*/
+.endorseScreenTitle {
+    background-color: rgb(31, 56, 98);
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.createEdorseForm {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 15px 35%;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+    background-color: #fff;
+}
+::ng-deep .mat-form-field-wrapper{
+    padding: 0;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 12px 0 8px 0;
+}
+.required-input::after{
+    content: "*";
+    color: red;
+    font-size: 15px;
+}
+.endorsePolfld, .endorseRmrksfld, .endorseDescRiskfld, .endorseLocRiskfld{
+    width: 80%;
+}
+.endorseTotalSumInsuredfld{
+    width: 70%;
+}
+.endorseEndorseTypefld{
+    width: 46%;
+}
+
+.endorseViewListbtn{
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.endorseViewListbtn:hover{
+    background-color: rgb(241, 238, 238);
+}
+
+
+ /*BUTTON*/
+.endorseBtnContainer{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+}
+.endorseCloseBtn{
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(255, 0, 0, 0.7);
+    color: white;
+    margin-left: 20%;
+}
+.endorseCloseBtn:hover{
+    background-color: red;
+}
+
+.fa-times-circle, .fa-chevron-circle-right{
+    font-style: 10px;
+    padding: 3px 3px;
+}
+.endorseProceedBtn{
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(3, 173, 252);
+    color: white;
+    margin-right: 20%;
+}
+.endorseProceedBtn:hover{
+    background-color: rgb(10, 138, 197);
+}
+
+@media only screen and (max-width: 720px){
+    .createEdorseForm{
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        margin: 15px 20%;
+    }
+    .endorseBtnContainer{
+        overflow: auto;
+    }
+}
+@media only screen and (max-width: 500px){
+    .createEdorseForm{
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+        margin: 15px 10%;
+    }
+    .endorseBtnContainer{
+        overflow: auto;
+    }
+}
