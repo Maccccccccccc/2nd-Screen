@@ -169,7 +169,7 @@ ul.endorseBreadcrumb li+li:before {
     overflow: auto;
     display: flex;
     border-radius: 4px;
-    margin: 120px 10%;
+    margin: 150px 10%;
     padding: 10px 40px;
 }
 .createEndorseForm {
