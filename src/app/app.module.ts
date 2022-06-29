@@ -11,6 +11,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { NgxCurrencyModule } from "ngx-currency";
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatRippleModule} from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { NgxCurrencyModule } from "ngx-currency";
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    MatStepperModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

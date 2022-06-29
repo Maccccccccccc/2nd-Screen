@@ -1,3 +1,6 @@
+::ng-deep .mat-form-field{
+    font-family: 'Poppins', sans-serif;
+}
 :host{
     font-family: 'Poppins', sans-serif;
 }
@@ -6,8 +9,23 @@ body{
     font-size: 13px;
     margin: 0%;
 }
+::ng-deep .mat-input-element:disabled {
+    color: black
+}
+
+::ng-deep .mat-form-field-appearance-fill.mat-form-field-disabled .mat-form-field-label {
+    color: black;
+}
+
+::ng-deep.mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-label {
+    color: black;
+}
+
+::ng-deep .mat-form-field-label {
+    color: black;
+}
 /*BANNER*/
-.endorseHeader {
+.endorse{
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -20,17 +38,21 @@ body{
     padding: 0px 10px;
     display: flex;
     justify-content: space-between;
-}
+    width: 100%;
 
+}
+.endorseHeaderContainer{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
 .endorseBannerContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
     width: 100%;
-    padding: 0%;
-    margin: 0%;
-    height: auto;
+    margin: 0 10px;
 }
 
 .endorseImgContainer {
@@ -69,8 +91,8 @@ body{
 .endorseBreadcrumbContainer {
     display: flex;
     justify-content: space-between;
-    padding: 5px 20px;
     background-color: #fafafa;
+    width: 100%;
 }
 
 .endorseBreadcrumb {
@@ -81,13 +103,13 @@ body{
     padding: 5px 0px;
     list-style: none;
     background-color: #fafafa;
-    margin: 0px 20px;
+    margin: 5px 20px;
 }
 
 .endorseBreadcrumb a {
     color: black;
     text-decoration: none;
-    padding: 3px;
+    padding: 0 5px;
 }
 
 .endorseBreadcrumb a:hover {
@@ -119,18 +141,42 @@ ul.endorseBreadcrumb li+li:before {
 /*------------------------------------------------------*/
 
 /*CREATE ENDORSEMENT FORM*/
-.endorseScreenTitle {
-    background-color: rgb(31, 56, 98);
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    text-transform: uppercase;
+.endorseScrnTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px;
+    background-color: white;
+    border-top: 2px solid blue;
+    border-bottom: 2px solid blue;
+    padding: 5px 3px;
 }
-.createEdorseForm {
+.endorseScrnTitle{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+.endorseScrnID{
+    padding: 3px 5px;
+    background-color: royalblue;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.endorseFormContainer{
+    width: 75%;
+    overflow: auto;
+    display: flex;
+    border-radius: 4px;
+    margin: 120px 10%;
+    padding: 10px 40px;
+}
+.createEndorseForm {
     min-width: 150px;
     max-width: 500px;
     width: 100%;
-    margin: 15px 35%;
+    margin-right: 35px;
 }
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
@@ -142,21 +188,46 @@ ul.endorseBreadcrumb li+li:before {
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
     padding: 12px 0 8px 0;
 }
+::ng-deep .endorseDescRiskfld .mat-input-element{
+    height: 50px;
+}
+::ng-deep  .endorseLocRiskfld .mat-input-element{
+    height: 50px;
+}
+::ng-deep  .endorseRmrksfld .mat-input-element{
+    height: 50px;
+}
 .required-input::after{
     content: "*";
     color: red;
     font-size: 15px;
 }
-.endorsePolfld, .endorseRmrksfld, .endorseDescRiskfld, .endorseLocRiskfld{
-    width: 80%;
+.endorsePolfld{
+    width: 50%;
+}
+.endorseRmrksfld{
+    width: 100%;
+}
+.endorseDescRiskfld, .endorseLocRiskfld{
+    width: 125%;
 }
 .endorseTotalSumInsuredfld{
     width: 70%;
 }
 .endorseEndorseTypefld{
-    width: 46%;
+    width: 100%;
 }
-
+.endorsePolInput{
+    padding: 15px 5px 6px 6px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+}
+.endorseSelect{
+    padding: 15px 5px 6px 6px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    margin-top: -15px;
+}
 .endorseViewListbtn{
     border: none;
     background-color: #fff;
@@ -174,8 +245,14 @@ ul.endorseBreadcrumb li+li:before {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    background-color: white;
-    padding: 10px 0;
+    background-color: #fff;
+    z-index: 20;
+}
+.endorseClsBtnContainer{
+    padding: 20px 175px;
+}
+.endorseProceedBtnContainer{
+    padding: 20px 150px 0 0px;
 }
 .endorseCloseBtn{
     border: none;
@@ -183,7 +260,7 @@ ul.endorseBreadcrumb li+li:before {
     text-transform: uppercase;
     background-color: rgb(255, 0, 0, 0.7);
     color: white;
-    margin-left: 20%;
+  
 }
 .endorseCloseBtn:hover{
     background-color: red;
@@ -199,31 +276,40 @@ ul.endorseBreadcrumb li+li:before {
     text-transform: uppercase;
     background-color: rgb(3, 173, 252);
     color: white;
-    margin-right: 20%;
 }
 .endorseProceedBtn:hover{
     background-color: rgb(10, 138, 197);
 }
 
 @media only screen and (max-width: 720px){
-    .createEdorseForm{
-        min-width: 150px;
-        max-width: 500px;
+    .createEndorseForm{
         width: 100%;
-        margin: 15px 20%;
+        margin: 0;
     }
-    .endorseBtnContainer{
-        overflow: auto;
+    .endorseFormContainer{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 60vh;
+       
     }
 }
 @media only screen and (max-width: 500px){
-    .createEdorseForm{
-        min-width: 150px;
-        max-width: 500px;
+    .createEndorseForm{
         width: 100%;
-        margin: 15px 10%;
+        margin: 0;
+        
     }
-    .endorseBtnContainer{
-        overflow: auto;
+    .endorseFormContainer{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 60vh;
+       
     }
+    .endorseDescRiskfld, .endorseLocRiskfld{
+        width: 110%;
+    }
+
+   
 }
