@@ -10,8 +10,8 @@ export class AppComponent {
 
   isNameSelected!: boolean;
   isNameselected!: boolean;
-  selectInput(event:any) {
-    let selected = event.target.value;
+  selectInput($event:any) {
+    let selected = $event.target.value;
     if (selected == 'Value-1') {
       this.isNameSelected = true;
     } else {

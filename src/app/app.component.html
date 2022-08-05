@@ -56,88 +56,138 @@
             <span class="endorseScrnID">Screen&nbsp;ID:&nbsp;SCR4104013</span>
         </div>
       </div>
-    
 
-  <!---->
+
+    
+     
+ <!--
+          -------------------------------------------------------------------------------------------------------->
+      <!---------------------------------------------------------------------------------------------------------->
+      <!-----------This Section used mat-select and mat-option but the fuction is not working--------------------->
+      <!---------------------------------------------------------------------------------------------------------->
+      <!----------------------------------------------------------------------------------------------------------
       <div class="endorseFormContainer">
-        <form class="createEndorseForm">
-          <div style="display: flex; align-items: center; justify-content: space-between;">
-            <mat-form-field class="endorsePolfld" appearance="outline">       
-              <mat-label class="required-input">Policy&nbsp;No. </mat-label>  
-              <input matInput value="GLTEST21ComAdj_CRG">  
-              <button class="endorseViewListbtn" matSuffix><mat-icon>view_list</mat-icon></button>
-            </mat-form-field>
-          </div>
-     
-            <mat-form-field class="endorseEndorseTypefld" appearance="outline">
-              <mat-label class="required-input">Endorsement&nbsp;Type </mat-label>
-              <mat-select disableRipple (selectionChange)="selectInput($event)">
-                <mat-option value="Value-1">Reduction&nbsp;in&nbsp;Coverage/Premium</mat-option>
-                <mat-option value="Value-2">Amendment in Policy Information Only With RD</mat-option>
-                <mat-option value="3">Amendment in Policy Information Only Without RD</mat-option>
-                <mat-option value="3">Addition in Charges Only</mat-option>
-                <mat-option value="3">Addition in Coverage/Premium</mat-option>
-                <mat-option value="3">Reduction in Charges Only</mat-option>
-                <mat-option value="3">Reduction in Coverage/Premium</mat-option>
-                <mat-option value="3">Policy Cancellation (Pro-rata Cancellation)</mat-option>
-                <mat-option value="3">Policy Cancellation (Flat Cancellation)</mat-option>
-              </mat-select>
-            </mat-form-field><br>
-
-    
-            <mat-form-field class="endorseDateReqfld" appearance="outline">
-              <mat-label class="required-input">Date&nbsp;Requested </mat-label>
-              <input matInput [matDatepicker]="picker1">
-              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-     
-
-            <mat-form-field class="endorseRmrksfld" appearance="outline">
-              <mat-label class="required-input">Endorsement&nbsp;Remarks </mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-
-     
-          <mat-form-field class="endorseIncpDfld" appearance="outline">
-            <mat-label class="required-input">Inception&nbsp;Date </mat-label>
-            <input matInput [matDatepicker]="picker2" />
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker #picker2></mat-datepicker>
-          </mat-form-field><br>
-
-     
-            <mat-form-field class="endorseExpiryDfld" appearance="outline">
-              <mat-label class="required-input">Expiry&nbsp;Date </mat-label>
-              <input matInput [matDatepicker]="picker3">
-              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-              <mat-datepicker #picker3></mat-datepicker>
-            </mat-form-field>
-
-            <mat-form-field class="endorseTotalSumInsuredfld" appearance="outline">
-              <mat-label>Total&nbsp;Sum&nbsp;Insured</mat-label>
-              <div style="display: flex; align-items:center; justify-content:space-between">
-                <span mat-prefix>PHP</span>
-              <input matInput currencyMask placeholder="0.00" value="" [options]="{ prefix: '', thousands: ',', decimal: '.' }" />        
+        <div style="margin: 0;">
+          <div class="createEndorseForm">
+              <mat-form-field class="endorsePolfld" appearance="outline">       
+                <mat-label class="required-input">Policy&nbsp;No.</mat-label>  
+                <input matInput value="GLTEST21ComAdj_CRG">  
+                <button class="endorseViewListbtn" matSuffix><mat-icon>view_list</mat-icon></button>
+              </mat-form-field>
+        
+              <mat-form-field class="endorseEndorseTypefld" appearance="outline">
+                <mat-label class="required-input">Endorsement&nbsp;Type</mat-label>
+                  <mat-select (selectionChange)="selectInput($event)">
+                      <mat-option value="Value-1">Reduction in Coverage/Premium</mat-option>
+                      <mat-option value="Value-2">Amendment in Policy Information Only With RD</mat-option>
+                      <mat-option value="Value-2">Amendment in Policy Information Only Without RD</mat-option>
+                      <mat-option value="Value-2">Addition in Charges Only</mat-option>
+                      <mat-option value="Value-1">Addition in Coverage/Premium</mat-option>
+                      <mat-option value="Value-2">Reduction in Charges Only</mat-option>
+                      <mat-option value="Value-1">Reduction in Coverage/Premium</mat-option>
+                      <mat-option value="Value-3">Policy Cancellation (Pro-rata Cancellation)</mat-option>
+                      <mat-option value="Value-2">Policy Cancellation (Flat Cancellation)</mat-option>
+                  </mat-select>
+              </mat-form-field>
+        
+        
+                <div *ngIf="!isNameselected">
+                <div *ngIf="!isNameSelected">
+                    <mat-form-field class="endorseDateReqfld" appearance="outline">
+                      <mat-label class="required-input">Date&nbsp;Requested </mat-label>
+                      <input matInput [matDatepicker]="picker1" readonly="true">
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+             
+        
+                    <mat-form-field class="endorseRmrksfld" appearance="outline">
+                      <mat-label class="required-input">Endorsement&nbsp;Remarks </mat-label>
+                      <textarea matInput></textarea>
+                    </mat-form-field>
+        
+             
+                  <mat-form-field class="endorseIncpDfld" appearance="outline">
+                    <mat-label class="required-input">Inception&nbsp;Date </mat-label>
+                    <input matInput [matDatepicker]="picker2" readonly="true">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field><br>
+        
+             
+                    <mat-form-field class="endorseExpiryDfld" appearance="outline">
+                      <mat-label class="required-input">Expiry&nbsp;Date </mat-label>
+                      <input matInput [matDatepicker]="picker3" readonly="true">
+                      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                      <mat-datepicker #picker3></mat-datepicker>
+                    </mat-form-field>
+        
+                    <mat-form-field class="endorseTotalSumInsuredfld" appearance="outline">
+                      <mat-label>Total&nbsp;Sum&nbsp;Insured</mat-label>
+                      <div style="display: flex; align-items:center; justify-content:space-between">
+                        <span mat-prefix>PHP</span>
+                      <input matInput currencyMask placeholder="0.00" value="" [options]="{ prefix: '', thousands: ',', decimal: '.' }" />        
+                    </div>
+                    </mat-form-field>
+                 
+                
+                    <mat-form-field class="endorseDescRiskfld" appearance="outline">
+                      <mat-label>Description&nbsp;of&nbsp;Risk </mat-label>
+                      <textarea matInput></textarea>
+                    </mat-form-field>
+        
+             
+                    <mat-form-field class="endorseLocRiskfld" appearance="outline">
+                      <mat-label>Location&nbsp;of&nbsp;Risk </mat-label>
+                      <textarea matInput></textarea>
+                    </mat-form-field>
+                </div>
+              </div>
+              </div>
+          
+        
+                <div *ngIf="isNameSelected">
+                  <mat-form-field class="endorseDateReqfld" appearance="outline" style="width: 80%;">
+                    <mat-label class="required-input">Date&nbsp;Requested </mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+        
+                  <mat-form-field class="endorseRmrksfld" appearance="outline">
+                    <mat-label class="required-input">Endorsement&nbsp;Remarks </mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                </div>
+        
+        
+                <div *ngIf="isNameselected">
+                  <mat-form-field class="endorseDateReqfld" appearance="outline">
+                    <mat-label class="required-input">Date&nbsp;Requested </mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+        
+                  <mat-form-field class="endorseRmrksfld" appearance="outline">
+                    <mat-label class="required-input">Endorsement&nbsp;Remarks </mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+        
+                  <mat-form-field class="endorseExpiryDfld" appearance="outline">
+                    <mat-label class="required-input">Expiry&nbsp;Date </mat-label>
+                    <input matInput [matDatepicker]="picker3">
+                    <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                    <mat-datepicker #picker3></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
             </div>
-            </mat-form-field>
+          </div> -->
 
-            </form>
-          <div>
-            
-            <mat-form-field class="endorseDescRiskfld" appearance="outline">
-              <mat-label>Description&nbsp;of&nbsp;Risk </mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
+         
+        
 
-     
-            <mat-form-field class="endorseLocRiskfld" appearance="outline">
-              <mat-label>Location&nbsp;of&nbsp;Risk </mat-label>
-              <textarea matInput></textarea>
-            </mat-form-field>
-          </div>
-        </div>
-<!--
  <div class="endorseFormContainer">
 <div style="margin: 0;">
   <div class="createEndorseForm">
@@ -167,7 +217,7 @@
         <div *ngIf="!isNameSelected">
             <mat-form-field class="endorseDateReqfld" appearance="outline">
               <mat-label class="required-input">Date&nbsp;Requested </mat-label>
-              <input matInput [matDatepicker]="picker1">
+              <input matInput [matDatepicker]="picker1" readonly="true">
               <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
               <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
@@ -181,7 +231,7 @@
      
           <mat-form-field class="endorseIncpDfld" appearance="outline">
             <mat-label class="required-input">Inception&nbsp;Date </mat-label>
-            <input matInput [matDatepicker]="picker2" />
+            <input matInput [matDatepicker]="picker2" readonly="true">
             <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
             <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field><br>
@@ -189,7 +239,7 @@
      
             <mat-form-field class="endorseExpiryDfld" appearance="outline">
               <mat-label class="required-input">Expiry&nbsp;Date </mat-label>
-              <input matInput [matDatepicker]="picker3">
+              <input matInput [matDatepicker]="picker3" readonly="true">
               <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
               <mat-datepicker #picker3></mat-datepicker>
             </mat-form-field>
@@ -221,7 +271,7 @@
         <div *ngIf="isNameSelected">
           <mat-form-field class="endorseDateReqfld" appearance="outline" style="width: 80%;">
             <mat-label class="required-input">Date&nbsp;Requested </mat-label>
-            <input matInput [matDatepicker]="picker1">
+            <input matInput [matDatepicker]="picker1" readonly="true">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -236,7 +286,7 @@
         <div *ngIf="isNameselected">
           <mat-form-field class="endorseDateReqfld" appearance="outline">
             <mat-label class="required-input">Date&nbsp;Requested </mat-label>
-            <input matInput [matDatepicker]="picker1">
+            <input matInput [matDatepicker]="picker1" readonly="true">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
@@ -248,14 +298,14 @@
 
           <mat-form-field class="endorseExpiryDfld" appearance="outline">
             <mat-label class="required-input">Expiry&nbsp;Date </mat-label>
-            <input matInput [matDatepicker]="picker3">
+            <input matInput [matDatepicker]="picker3" readonly="true">
             <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
             <mat-datepicker #picker3></mat-datepicker>
           </mat-form-field>
         </div>
       </div>
     </div>
-  </div>-->
+  </div>
 
 
 
@@ -269,6 +319,6 @@
               <a href="./app.component.html"><button type="submit" class="endorseProceedBtn" mat-raised-button>Proceed<i class="fas fa-chevron-circle-right"></i></button></a>
               </div>
             </div>
-          </div>
+          
 </body>
 </html>
